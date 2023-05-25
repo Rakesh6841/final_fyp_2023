@@ -1,0 +1,7 @@
+scikit-learn==0.24.0
+matplotlib
+scikit-learn
+numpy
+pandas
+seaborn==0.12.2
+wordcloud==1.9.2
