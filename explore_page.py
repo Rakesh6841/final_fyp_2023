@@ -39,95 +39,6 @@ def WordCloudPlotter(dfColumn):
   
     st.pyplot(fig)
 
-# def PlotData(features):
-#     fig2 = plt.figure(figsize= (20, 10))    
-#     pltNum = 1
-#     for mem in features:
-#         plt.subplot(1, 2 , pltNum)
-#         plt.style.use('seaborn-whitegrid')
-#         plt.grid(True)
-#         plt.title('Regplot Plot for '+ str(mem))
-#         sns.regplot(data = data, x = mem, y = 'Likes' , color = 'green')
-#         pltNum += 1
-#         # st.pyplot(fig2) 
-#         st.pyplot(plt.gcf())   
-    
-
-# # def true_values():
-# #     predictions = gbr.predict(xTest)
-# #     plt.scatter(yTest, predictions)
-# #     plt.style.use('seaborn-whitegrid')
-# #     plt.xlabel('true values')
-# #     plt.ylabel('predicted values')
-# #     plt.title('GradientRegressor')
-# #     plt.plot(np.arange(0,0.4, 0.01), np.arange(0, 0.4, 0.01), color = 'green')
-# #     plt.grid(True)
-
-# #     # render the plot in Streamlit
-# #     st.pyplot()
-
-
-# # def PredictionsWithConstantFollowers(model, followerCount, scaller, maxVal):
-# #     followers = followerCount * np.ones(24)
-# #     hours = np.arange(1, 25)
-    
-# #     # defining vector 
-# #     featureVector = np.zeros((24, 2))
-# #     featureVector[:, 0] = followers
-# #     featureVector [:, 1] = hours
-    
-# #     # doing scalling
-# #     featureVector = scaller.transform(featureVector)
-# #     predictions = model.predict(featureVector)
-# #     predictions = (maxValLikes * predictions).astype('int')
-    
-# #     plt.figure(figsize= (10, 10))
-# #     plt.plot(hours, predictions)
-# #     plt.style.use('seaborn-whitegrid')
-# #     plt.scatter(hours, predictions, color = 'g')
-# #     plt.grid(True)
-# #     plt.xlabel('hours since posted')
-# #     plt.ylabel('Likes')
-# #     plt.title('Likes progression with ' + str(followerCount) +' followers')
-# #     st.pyplot()
-
-
-# # define the true_values function
-# def true_values(gbr, xTest, yTest):
-#     predictions = gbr.predict(xTest)
-#     plt.scatter(yTest, predictions)
-#     plt.style.use('seaborn-whitegrid')
-#     plt.xlabel('true values')
-#     plt.ylabel('predicted values')
-#     plt.title('GradientRegressor')
-#     plt.plot(np.arange(0, 0.4, 0.01), np.arange(0, 0.4, 0.01), color='green')
-#     plt.grid(True)
-#     # render the plot in Streamlit
-#     st.pyplot()
-
-# # define the PredictionsWithConstantFollowers function
-# def PredictionsWithConstantFollowers(model, followerCount, scaller, maxValLikes):
-#     followers = followerCount * np.ones(24)
-#     hours = np.arange(1, 25)
-#     # defining vector featureVector
-#     featureVector = np.zeros((24, 2))
-#     featureVector[:, 0] = followers
-#     featureVector[:, 1] = hours
-#     # doing scaling
-#     featureVector = scaller.transform(featureVector)
-#     predictions = model.predict(featureVector)
-#     predictions = (maxValLikes * predictions).astype('int')
-#     plt.figure(figsize=(10, 10))
-#     plt.plot(hours, predictions)
-#     plt.style.use('seaborn-whitegrid')
-#     plt.scatter(hours, predictions, color='g')
-#     plt.grid(True)
-#     plt.xlabel('hours since posted')
-#     plt.ylabel('Likes')
-#     plt.title('Likes progression with ' + str(followerCount) + ' followers')
-#     # render the plot in Streamlit
-#     st.pyplot()
-
 
 # Create Streamlit app
 def show_explore_page():
@@ -142,13 +53,5 @@ def show_explore_page():
     WordCloudPlotter('Hashtags')
 
     st.subheader("Regplot for Followers vs Likes")
-    PlotData(['Followers', 'Time since posted'])
-
-
-    st.subheader("Regplot for Followers vs Likes")
-
-    true_values()
-    
-    # PredictionsWithConstantFollowers(gbr, 100, stdSc, maxValLikes)
-
+    PlotData(['Followers', 'Time since posted'])   
     
