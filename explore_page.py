@@ -44,14 +44,27 @@ def WordCloudPlotter(dfColumn):
 def show_explore_page():
     # Add title and subtitle to app
     st.title("Instagram Reach Word Cloud")
-    st.subheader("The most commonly used words.")
+    # st.subheader("The most commonly used words.")
 
-    WordCloudPlotter('Caption')
+    # WordCloudPlotter('Caption')
 
-    st.subheader("The most commonly used hastags.")
+    # st.subheader("The most commonly used hastags.")
 
-    WordCloudPlotter('Hashtags')
+    # WordCloudPlotter('Hashtags')
 
-    st.subheader("Regplot for Followers vs Likes")
-    PlotData(['Followers', 'Time since posted'])   
-    
+    # st.subheader("Regplot for Followers vs Likes")
+    # PlotData(['Followers', 'Time since posted'])
+
+
+    # st.subheader("Regplot for Followers vs Likes")
+
+    option = st.sidebar.selectbox("Explore Or Predict", ("Caption", "Hashtags"))
+
+    if option == "Caption":
+        st.subheader("The most commonly used words.")
+
+        WordCloudPlotter('Caption')
+    else:
+        st.subheader("The most commonly used hastags.")
+
+        WordCloudPlotter('Hashtags')
